@@ -1,0 +1,371 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+    color: white;
+}
+html, body {
+    height: 100%;
+}
+body {
+    background-color: #72242f;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    margin-bottom: 10px;
+    background-color: #a45664;
+    color: white;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+}
+.nav-container {
+    /* border: 1px solid blue; */
+    padding: 10px 20px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    font-weight: 600;
+    min-width: max-content;
+}
+.nav-links {
+    /* border: 1px solid red; */
+    padding: 10px 20px;
+    display: flex;
+    gap: 30px;
+    transition: all ease-in-out 0.2s;
+}
+.nav-links a {
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    width: max-content;
+}
+.nav-links a:hover {
+    color: #72242f;
+}
+.logo-pic {
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    width: 47px;
+    height: 43px;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-pic img {
+    width: 100%;
+    height: 196%;
+    object-fit: contain;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+}
+.hamburger-menue {
+    width: 260px;
+    height: 100vh;                 
+    background-color: #51171f;
+    box-shadow: -6px 0 18px rgba(0,0,0,.25);
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 20px 14px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    z-index: 9999;
+
+    /* slide behavior */
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.hamburger-menue.open{
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hamburger-menue a {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.hamLink1 {
+    border-radius: 7px;
+    background-color: #c16a6a;
+    width: 100%;
+    padding: 10px;
+    transition: all ease-in-out 0.2s;
+}
+.hamLink1:hover {
+    box-shadow: 2px 6px 11px 0px #873232;
+    transform: translateY(-3px);
+}
+button:has(.fa-x) {
+    padding: 1px 10px;
+    align-self: flex-end;
+    font-size: 25px;
+}
+.fa-x {
+    color: pink;
+}
+.fa-x:hover {
+    color: red;
+}
+
+.ham-pic-cupid {
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    width: 89px;
+    height: 80px;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+}
+.ham-pic-cupid img {
+    width: 100%;
+    height: 143%;
+    object-fit: contain;
+}
+.hamburger-btn, .close-btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+@media screen and (max-width:980px) {
+
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+
+}
+
+main {
+    flex: 1;
+    padding: 30px 50px;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.pic {
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease forwards;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.proposal {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+.proposal h1 {
+    flex: 1;
+    font-size: 4rem;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;    
+    line-height: 1;
+    animation: fadeUp 1s ease forwards;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.proposal p {
+    color: #d9b2b2;
+    width: 70%;
+    animation: fadeUp 2s ease forwards;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn {
+    display: flex;
+    gap: 20px;
+    animation: fadeUp  3s ease forwards;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.btn a {
+    text-decoration: none;
+    padding: 12px 28px;
+    background-color: #f06f84;
+    font-weight: 600;
+    border-radius: 18px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    transition: all ease-in-out 0.25s;
+}
+.btn a:hover {
+    background-color: #fc4f6c;
+}
+
+@media screen and (max-width: 703px) {
+    .pic {
+        width: 250px;
+        height: 250px;
+    }
+    .proposal h1 {
+        font-size: 3rem;
+    }
+    .proposal p {
+        font-size: 13px;
+    }
+    .btn a {
+        padding: 10px 24px;
+        font-size: 13px;
+
+    }
+}
+@media screen and (max-width: 600px) {
+    main { 
+        padding: 25px; 
+    }
+}
+
+@media screen and (max-width: 553px) {
+    .pic {
+        width: 225px;
+        height: 225px;
+    }
+    .proposal h1 {
+        font-size: 2.5rem;
+    }
+    .proposal p {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 477px) {
+    .pic {
+        width: 220px;
+        height: 220px;
+    }
+    .proposal h1 {
+        font-size: 2.2rem;
+    }
+    .proposal p {
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 432px) {
+    .pic {
+        width: 220px;
+        height: 220px;
+    }
+    .proposal h1 {
+        font-size: 2rem;
+    }
+    .proposal p {
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 401px) {
+    .pic {
+        width: 210px;
+        height: 210px;
+    }
+    .proposal h1 {
+        font-size: 1.5rem;
+    }
+    .proposal p {
+        font-size: 10px;
+    }
+}
+footer {
+    /* border: 1px solid red; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items:last baseline;
+    font-size: 11px;
+    height: 70px;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer div p {
+    color: #c16a6a;
+}
+
+.hamburger-menue.open {
+  display: flex;
+}
